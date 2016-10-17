@@ -1,5 +1,5 @@
 fis3-postprocessor-html
-a css formatter of fis3 based on stylefmt
+a css formatter of fis3 based on js-beautify
 
 [![npm](https://img.shields.io/npm/v/fis3-postprocessor-htmlt.svg?style=flat-square)](https://www.npmjs.com/package/fis3-postprocessor-html) 
 [![npm](https://img.shields.io/npm/dt/fis3-postprocessor-html.svg?style=flat-square)](https://www.npmjs.com/package/fis3-postprocessor-html) 
