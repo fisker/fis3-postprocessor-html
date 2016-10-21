@@ -9,12 +9,15 @@ var jsbeautifier = require('js-beautify').html;
 var log = (global.fis && fis.log) || console;
 
 module.exports = function(content, file, conf){
-  return jsbeautifier(content, conf);
+  content = content.replace(/__relative\("(.*?)"\)/g, '"__relative_fn_start__$1__relative_fn_end__"');
+  content = jsbeautifier(content, conf);
+  content = content.replace(/"__relative_fn_start__(.*?)__relative_fn_end__"/g, '__relative("$1")');
+  return content;
 };
 
 
 module.exports.defaultOptions = {
-  "indent_size": 4,
+  "indent_size": 2,
   "indent_char": " ",
   "eol": "\n",
   "indent_level": 0,
