@@ -9,9 +9,13 @@ var jsbeautifier = require('js-beautify').html;
 var log = (global.fis && fis.log) || console;
 
 module.exports = function(content, file, conf){
-  content = content.replace(/__relative\("(.*?)"\)/g, '"__relative_fn_start__$1__relative_fn_end__"');
+  content = content.replace(/__relative\("(.*?)"\)/g, '"__relative_fn1_start__$1__relative_fn1_end__"');
+  content = content.replace(/__relative<<<"(.*?)">>>/g, '"__relative_fn2_start__$1__relative_fn2_end__"');
+
   content = jsbeautifier(content, conf);
-  content = content.replace(/"__relative_fn_start__(.*?)__relative_fn_end__"/g, '__relative("$1")');
+
+  content = content.replace(/"__relative_fn2_start__(.*?)__relative_fn2_end__"/g, '__relative<<<"$1">>>');
+  content = content.replace(/"__relative_fn1_start__(.*?)__relative_fn1_end__"/g, '__relative("$1")');
   return content;
 };
 
