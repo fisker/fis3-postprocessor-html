@@ -1,6 +1,6 @@
 {
   "name": "fis3-postprocessor-html",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a html formatter of fis3 based on js-beautify",
   "main": "index.js",
   "repository": {
@@ -23,6 +23,14 @@
   "dependencies": {
     "js-beautify": "^1.6.4"
   },
+  "scripts": {
+    "release": "npm --registry=https://registry.npmjs.org/ publish"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js"
+  ],
   "bugs": {
     "url": "https://github.com/fisker/fis3-postprocessor-html/issues"
   },
